@@ -22,11 +22,7 @@ module.exports = {
         'theme.pink': './src/theme.pink.scss',
         'theme.material3': './src/theme.material3.scss',
         flags: './src/flags.scss',
-        'animated-emoji': './src/animated-emoji.scss',
-        vr: {
-            import: ['./src/vr.js', './src/vr.scss'],
-            dependOn: 'vendor'
-        }
+        'animated-emoji': './src/animated-emoji.scss'
     },
     output: {
         filename: '[name].js',
@@ -87,12 +83,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.pug',
-            inject: false,
-            minify: false
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'vr.html',
-            template: './src/vr.pug',
             inject: false,
             minify: false
         }),

@@ -45,16 +45,6 @@ namespace VRCX
                     File.Copy(Path.Combine(AppDataDirectory, "VRCX.sqlite3"), Path.Combine(AppDataDirectory, "VRCX-backup.sqlite3"));
                 }
             }
-
-            // Migrate cache to userdata for Cef 115 update
-            var oldCachePath = Path.Combine(AppDataDirectory, "cache");
-            if (Directory.Exists(oldCachePath))
-            {
-                var newCachePath = Path.Combine(AppDataDirectory, "userdata", "cache");
-                if (Directory.Exists(newCachePath))
-                    Directory.Delete(newCachePath, true);
-                Directory.Move(oldCachePath, newCachePath);
-            }
         }
 
         private static void ConfigureLogger()
@@ -145,7 +135,6 @@ namespace VRCX
             VRCXStorage.Load();
             SQLiteLegacy.Instance.Init();
             CpuMonitor.Instance.Init();
-            Discord.Instance.Init();
             WorldDBManager.Instance.Init();
             WebApi.Instance.Init();
             LogWatcher.Instance.Init();
@@ -165,7 +154,6 @@ namespace VRCX
             WebApi.Instance.Exit();
             WorldDBManager.Instance.Stop();
 
-            Discord.Instance.Exit();
             CpuMonitor.Instance.Exit();
             VRCXStorage.Save();
             SQLiteLegacy.Instance.Exit();

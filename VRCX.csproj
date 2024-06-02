@@ -105,9 +105,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="openvr_api.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="sqlite3.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

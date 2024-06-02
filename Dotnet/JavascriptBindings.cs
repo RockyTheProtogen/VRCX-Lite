@@ -13,7 +13,6 @@ namespace VRCX
             repository.Register("VRCXStorage", VRCXStorage.Instance);
             repository.Register("SQLite", SQLiteLegacy.Instance);
             repository.Register("LogWatcher", LogWatcher.Instance);
-            repository.Register("Discord", Discord.Instance);
             repository.Register("AssetBundleCacher", AssetBundleCacher.Instance);
         }
         
